@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    #display {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    button {
+      font-size: 1em;
+      padding: 10px;
+      margin: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div id="display">0:00:00</div>
+<button onclick="startStopwatch()">Start</button>
+<button onclick="stopStopwatch()">Stop</button>
+<button onclick="resetStopwatch()">Reset</button>
+
+<script>
+  let stopwatch;
+  let startTime;
+  let running = false;
+
+  function startStopwatch() {
+    if (!running) {
+      startTime = Date.now() - (stopwatch || 0);
+      stopwatch = setInterval(updateDisplay, 1000);
+      running = true;
+    }
+  }
+
+  function stopStopwatch() {
+    clearInterval(stopwatch);
+    running = false;
+  }
+
+  function resetStopwatch() {
+    clearInterval(stopwatch);
+    running = false;
+    stopwatch = 0;
+    updateDisplay();
+  }
+
+  function updateDisplay() {
+    const currentTime = Date.now();
+    const elapsedMilliseconds = currentTime - startTime;
+    const elapsedSeconds = Math.floor(elapsedMilliseconds / 1000);
+    const hours = Math.floor(elapsedSeconds / 3600);
+    const minutes = Math.floor((elapsedSeconds % 3600) / 60);
+    const seconds = elapsedSeconds % 60;
+
+    document.getElementById("display").innerText = `${hours}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  }
+</script>
+
+</body>
+</html>

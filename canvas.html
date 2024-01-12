@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas Example</title>
+</head>
+<body>
+
+<canvas id="myCanvas" width="400" height="200" style="border:1px solid #000;"></canvas>
+<canvas id="mytri"  width="500" height="400" style="border: 4px solid black;"></canvas>
+
+<script>
+  // Get the canvas element
+  const canvas = document.getElementById('myCanvas');
+
+  // Get the 2D rendering context
+  const ctx = canvas.getContext('2d');
+  // ctx.fillStyle("red")
+  // ctx.beginpath();
+  ctx.strokeStyle="purple"
+  ctx.lineWidth=10
+  ctx.fillStyle="orange"
+  ctx.lineTo(0,250);
+  ctx.lineTo(250,500);
+  ctx.stroke();
+  ctx.lineTo(250,0);
+  ctx.stroke();
+  ctx.fill()
+
+var tri=document.getElementById("mytri")
+var triangle=tri.getContext("2d")
+triangle.backgroundColor="yellow"
+triangle.fillStyle="purple"
+triangle.lineWidth=10
+triangle.beginPath()
+triangle.moveTo(250,0)
+triangle.lineTo(0,250)
+triangle.lineTo(500,250)
+triangle.lineTo(250,0)
+triangle.stroke()
+triangle.fill()
+triangle.font="50px MV Boli"
+triangle.fillStyle="green"
+triangle.fillText("hii hari",200,300)
+</script>
+
+</body>
+</html>

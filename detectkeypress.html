@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Press Detection</title>
+</head>
+<body>
+
+<p>Press a key and see the result:</p>
+<p id="result"></p>
+
+<script>
+  document.addEventListener('keydown', function(event) {
+    // The 'event' object contains information about the key press
+    const keyPressed = event.key;
+    
+    // Update the result paragraph with the pressed key
+    document.getElementById('result').innerText = `Key Pressed: ${keyPressed}`;
+  });
+</script>
+
+</body>
+</html>

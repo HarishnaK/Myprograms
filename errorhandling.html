@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name;
+try{
+    name=prompt("Enter your name:");
+    if(name=="harishna")
+        console.log("HII HARISHNA NICE TO MEET YOU");
+    if(name=='')
+       throw "please enter your name"
+    if(name!="harishna")
+       throw "invalid user name"
+   
+}
+catch(error){
+console.log(error);
+}
+finally{
+    console.log("Thank you!");
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+<head>
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.item1 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+</style>
+</head>
+<body>
+
+<h1>Grid Lines</h1>
+
+<div class="grid-container">
+  <div class="item1">A</div>
+  <div class="item2">B</div>
+  <div class="item3">C</div>  
+  <div class="item4">D</div>
+  <div class="item5">E</div>
+  <div class="item6">F</div>
+  <div class="item7">F</div>
+  <div class="item8">G</div>  
+</div>
+</body>
+</html>

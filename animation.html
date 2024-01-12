@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Animation</title>
+  <style>
+    #animatedElement {
+      width: 50px;
+      height: 50px;
+      background-color: blue;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+<div id="animatedElement"></div>
+
+<script>
+  // Get the animated element
+  const animatedElement = document.getElementById('animatedElement');
+
+  // Set initial position
+  let position = 0;
+
+  // Function to update the position and trigger animation
+  function animate() {
+    position += 2; // Update the position
+
+    // Apply the new position to the element
+    animatedElement.style.left = position + 'px';
+
+    // Request the next animation frame
+    requestAnimationFrame(animate);
+  }
+
+  // Start the animation
+  animate();
+</script>
+
+</body>
+</html>
